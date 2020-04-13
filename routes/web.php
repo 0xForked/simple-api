@@ -14,7 +14,11 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return response()->json([
+        'code' => 200,
+        'message' => 'welcome to simple service',
+        'engine' =>  $router->app->version()
+    ]);
 });
 
 
